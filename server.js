@@ -4,13 +4,15 @@ const mongoose = require("mongoose")
 
 const app = express();
 
+const port = process.env.PORT || 5000
+
 app.use(express.json());
 app.use(cors());
 
-const LoginSchema = require("./Admin/AdminLogin")
-const PostSchema = require("./Admin/AdminPosts")
+const LoginSchema = require("./models/AdminLogin")
+const PostSchema = require("./models/AdminPosts")
 
-mongoose.connect("mongodb+srv://Giridhar:gIRIDHAR_11@cluster0.9x1wr2m.mongodb.net/Memoir", 
+mongoose.connect('mongodb+srv://Giridhar:gIRIDHAR_11@cluster0.9x1wr2m.mongodb.net/Memoir', 
 {
     UseNewUrlParser: true, 
 });
@@ -71,6 +73,6 @@ app.delete("/delPost", async(req,res) => {
 })
 
 
-app.listen(5000, ()=> {
-    console.log("App is running...");
+app.listen(port, ()=> {
+    console.log("App is running...", port);
 });
