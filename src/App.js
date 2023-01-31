@@ -7,6 +7,7 @@ import AdminHome from './Components/Admin/AdminHome';
 import Footer from './Components/Footer';
 import Home from './Components/Users/Home';
 import Contact from './Components/contact/Contact';
+import PageNotFound from './Components/PageNotFound';
 
 
 function App() {
@@ -18,7 +19,9 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />}/>
             <Route path='/AdminLogin' element={<AdminLogin />}/>
-            <Route path='/AdminHome' element={<AdminHome />}/>
+            {localStorage.getItem('LoggedIn') ? 
+            <Route path='/AdminHome' element={<AdminHome />}/> : 
+            <Route path='/AdminHome' element={<PageNotFound />}/>}
             <Route path='/Contact' element={<Contact />}/>
           </Routes>
         </BrowserRouter>
