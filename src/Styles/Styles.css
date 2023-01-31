@@ -1,0 +1,173 @@
+a.LoginButton.btn.btn-primary , button.LoginButton.btn.btn-primary {
+    background-color: #8b8dff;
+    color: white;
+    margin-left: 1vh;
+    border: 0;
+}
+
+a.LoginButton.btn.btn-primary:hover, button.LoginButton.btn.btn-primary:hover{
+    background-color: white;
+    color: #8b8dff;
+}
+
+/* .deleteButton{
+    background-color: #f74a4a;
+    color: white;
+    margin-left: 1vh;
+    border: 0;
+} */
+
+.brand{
+    font-family: 'Caveat', cursive;
+    margin-left: 2vh;
+}
+
+.modalFooter{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card-body{
+    width: 30%;
+    background-color: rgba(177, 178, 255, 0.5);
+    border-radius: 2vh;
+    margin-top: 150px;
+}
+
+.card-body input{
+    width: 75% ;
+}
+
+
+.container {
+    margin: 5vh;
+    padding: 5vh;
+}
+
+.post{
+    font-size:1rem;
+}
+
+.post h5{
+    --bs-text-opacity: 1;
+    color: #6c757d!important;
+}
+
+.allposts{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 5vh;
+    padding: 2rem;
+    text-align: left;
+}
+
+#title{
+    height: 8vh;
+    border: transparent;
+}
+
+#title::placeholder {
+    color: #6c757d;
+    font-weight:700;
+    font-size: xx-large;
+}
+
+.openPost{
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.openPost:hover{
+    color: #6c757d 
+}
+
+.my-modal{
+    width: 90px ;   /* Occupy the 90% of the screen width */
+    max-width: 90vw;
+} 
+
+img{
+    width: 20rem !important;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 767px)  {
+   
+    img{
+        width: 20rem !important;
+    }
+
+    /* *{
+        font-size: x-large;
+        
+    } */
+
+    .allposts{
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .card-body{
+        width: 80%;
+        height: 35vh;
+    }
+
+    .text-center h2{
+        position: relative;
+        top: 2vh
+    }
+
+}
+
+@media screen and (min-width: 2560px) {
+    img{
+        width: 45rem !important;
+    }
+
+    *{
+        font-size: x-large;
+        
+    }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 950px) {
+    .card-body{
+        width: 45vh;
+        height: 30vh;
+    }
+
+    
+    *{
+        font-size: large;
+    }
+
+    .text-center h2{
+        position: relative;
+        top: 2vh
+    }
+}
+
+@media only screen and (min-width: 280px) and (max-width: 320px) {
+    .allposts{
+        grid-template-columns: repeat(1, 1fr); 
+    }
+
+    figure img{
+        display: none;
+    }
+
+}
+
+
+@media only screen and (min-width: 360px) and (max-width: 480px) {
+    figure img{
+        width: 38vh !important;
+    }
+
+    .container{
+        padding: 1vh !important;
+        margin-top:  2vh !important;
+    }
+}
+

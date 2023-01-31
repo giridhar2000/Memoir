@@ -1,0 +1,11 @@
+.app {
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+}
+
+.content-wrap{
+  flex-grow: 1;
+}
