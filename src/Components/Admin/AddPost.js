@@ -32,7 +32,7 @@ export default class AddPost extends Component {
 
   onSubmit = () => {
     axios({
-      url: "http://localhost:5000/post",
+      url: "https://memoir-server.onrender.com/post",
       method: "post",
       data: {
         title: this.state.title,

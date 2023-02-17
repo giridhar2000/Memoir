@@ -35,7 +35,7 @@ export default function AdminLogin() {
       name: formik.values.username, 
       pass: formik.values.password
     };
-    axios.post("http://localhost:5000/login",postData).then((res) => {
+    axios.post("https://memoir-server.onrender.com/login",postData).then((res) => {
       localStorage.setItem('name', res.data.n)
       const success = new Promise((resolve,reject) => setTimeout(resolve, 1000));
       const failed = new Promise((resolve,reject) => setTimeout(reject, 1000));

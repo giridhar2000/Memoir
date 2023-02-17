@@ -13,7 +13,7 @@ export default class Post extends Component {
       componentDidMount(){
         this.setState({postNo: localStorage.getItem('postNo')})
         axios({
-          url:"http://localhost:5000/",
+          url:"https://memoir-server.onrender.com/",
           method: "get",
         }).then((res)=>{
           this.setState({post: res.data})

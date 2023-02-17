@@ -21,7 +21,7 @@ export default class Home extends Component {
   }
   componentDidMount(){
     axios({
-      url:"http://localhost:5000/",
+      url:"https://memoir-server.onrender.com/",
       method: "get",
     }).then((res)=>{
       this.setState({post: res.data})
@@ -38,7 +38,7 @@ export default class Home extends Component {
   delPost(e, postId){
     e.preventDefault();
     axios({
-      url:"http://localhost:5000/delPost",
+      url:"https://memoir-server.onrender.com/delPost",
       method: "delete",
       data: {
         id: postId
