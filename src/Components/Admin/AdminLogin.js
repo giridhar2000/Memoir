@@ -50,7 +50,8 @@ export default function AdminLogin() {
             error: 'Login failed🤯'
           }
         )
-        setTimeout(() => { navigate("/AdminHome");window.location.reload(); }, 3000);
+        setTimeout(() => { navigate("/AdminHome");
+        window.location.reload(); }, 3000);
       } 
       else{
         toast.promise(

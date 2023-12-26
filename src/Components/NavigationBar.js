@@ -18,7 +18,7 @@ function NavigationBar() {
   return (
     <>
       {['xl'].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3 mt-2">
+        <Navbar key={expand} bg="light" expand={expand}>
           <Container fluid>
             <Navbar.Brand className='brand' style={{fontSize: "xxx-large"}} href="/">Memoir</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />

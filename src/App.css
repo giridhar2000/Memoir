@@ -8,4 +8,5 @@
 
 .content-wrap{
   flex-grow: 1;
+  background-color: rgba(59,130,246,.05);
 }

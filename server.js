@@ -12,7 +12,8 @@ app.use(cors());
 const LoginSchema = require("./models/AdminLogin")
 const PostSchema = require("./models/AdminPosts")
 
-mongoose.connect('mongodb+srv://Giridhar:gIRIDHAR_11@cluster0.9x1wr2m.mongodb.net/Memoir', 
+mongoose.connect('mongodb+srv://Giridhar:gIRIDHAR_11@cluster0.9x1wr2m.mongodb.net/Memoir',
+ 
 {
     UseNewUrlParser: true, 
 });

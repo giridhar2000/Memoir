@@ -1,0 +1,43 @@
+.post-cards-full-body {
+    /* display: none; */
+}
+
+.post-cards-full-body p{
+    color: blue;
+}
+
+.post-cards{
+    min-height: 50vh;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    padding: 4vh;
+}
+
+.post-cards-body{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 4vh;
+    color: white;
+}
+
+.post-cards:hover > .post-cards-body{
+    top: 0;
+    background: rgba(0,0,255,0.5);
+}
+
+.post-cards:hover > .post-cards-full-body p{
+    display: block !important;
+    color: red !important;
+}
+
+.post-cards-title{
+    padding-block: 2vh;
+}
+
+.post-cards-full-footer{
+    display: flex;
+    justify-content: space-between;
+}
