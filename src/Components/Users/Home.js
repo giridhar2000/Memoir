@@ -23,7 +23,7 @@ export default class Home extends Component {
   }
   componentDidMount() {
     axios({
-      url: "http://localhost:5000/",
+      url: "http://localhost:1106/",
       method: "get",
     }).then((res) => {
       this.setState({ post: res.data })

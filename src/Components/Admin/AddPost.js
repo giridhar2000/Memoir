@@ -45,7 +45,7 @@ export default function AddPost(props) {
 
   const onSubmit = () => {
     axios({
-      url: "http://localhost:5000/post",
+      url: "https://memoir-tau.vercel.app/post",
       method: "post",
       data: {
         title: values.title,
