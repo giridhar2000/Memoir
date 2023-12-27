@@ -6,7 +6,7 @@ const PostSchema = new mongoose.Schema({
         required: true
     },
     date:{
-        type: Date,
+        type: String,
     },
     title: {
         type: String,
@@ -15,7 +15,19 @@ const PostSchema = new mongoose.Schema({
     body:{
         type: Object,
         required: true
-    }
+    },
+    subtitle: {
+        type: String,
+        required: true
+    },
+    authorProfile: {
+        type: String,
+        required: true
+    },
+    coverPic: {
+        type: String,
+        required: true
+    },
 })
 
 const Post = mongoose.model("Post", PostSchema);

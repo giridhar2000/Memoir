@@ -74,15 +74,8 @@ export default class Home extends Component {
           <h1>All Posts</h1>
           <hr />
           <div className='allposts'>
-            {/* {this.state.post.map((p, i) => ( 
-              <div className='post'>
-              <h2 className='openPost' onClick={(event) => this.handleClick(event, i, p._id)}>{p.title}</h2>
-              <h5>{p.date.substr(0,10)}</h5>
-              <p>by {p.authorName}</p>
-              </div>
-            ))} */}
             {this.state.post.map((p, i) => (
-              <PostCards title={'Report'} header={p.title} body={p.body} date={p.date.substr(0,10)} pic={bg}/>
+              <PostCards title={'Blog'} header={p.title} body={p.body} date={p.date} pic={p.pic} subtitle={p.subtitle}/>
             ))}
           </div>
 
