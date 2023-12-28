@@ -9,7 +9,7 @@ export default function BlogPost() {
     const [data, setData] = useState([])
     useEffect(()=>{
         axios({
-            url: "http://localhost:1106/getblog",
+            url: "https://memoir-server.onrender.com/getblog",
             method: "post",
             data: {
                 id: id
