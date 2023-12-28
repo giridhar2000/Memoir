@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
-// import Carousel from 'react-bootstrap/Carousel';
 import '../../Styles/Styles.css'
 import axios from 'axios';
-import { Modal } from 'react-bootstrap';
-import DOMPurify from 'dompurify';
-import Button from 'react-bootstrap/Button';
+// import { Modal } from 'react-bootstrap';
+// import DOMPurify from 'dompurify';
 import { toast, ToastContainer, Zoom } from 'react-toastify';
 import PostCards from '../PostCards/PostCards';
-import bg from '../../Assets/img/bg.jpg'
 
 export default class Home extends Component {
   constructor() {
@@ -23,7 +20,7 @@ export default class Home extends Component {
   }
   componentDidMount() {
     axios({
-      url: "http://localhost:1106/",
+      url: "https://memoir-server.onrender.com/",
       method: "get",
     }).then((res) => {
       this.setState({ post: res.data })
@@ -69,17 +66,16 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <hr />
+
         <div className='blogPosts'>
-          <h1>All Posts</h1>
-          <hr />
+          <h1 style={{ marginBlock: '3vh' }}>All Posts</h1>
           <div className='allposts'>
             {this.state.post.map((p, i) => (
-              <PostCards title={'Blog'} header={p.title} body={p.body} date={p.date} pic={p.pic} subtitle={p.subtitle}/>
+              <PostCards title={'Blog'} header={p.title} body={p.body} date={p.date} pic={p.coverPic} subtitle={p.subtitle} postNo={p._id}/>
             ))}
           </div>
-
-          {/* <Modal size='xl' dialogClassName="my-modal" show={this.state.show} onHide={this.handleshowDelClose} backdrop="static" keyboard={false}>
+        </div>
+        {/* <Modal size='xl' dialogClassName="my-modal" show={this.state.show} onHide={this.handleshowDelClose} backdrop="static" keyboard={false}>
         <Modal.Header closeButton>
           <Modal.Title>{this.state.postNo.title} </Modal.Title>
         </Modal.Header>
@@ -96,7 +92,7 @@ export default class Home extends Component {
           </div>
         </Modal.Footer>
         </Modal> */}
-        </div>
+
         <ToastContainer transition={Zoom} autoClose={2000} draggable={false} position={toast.POSITION.TOP_CENTER} />
       </div>
     )

@@ -20,6 +20,7 @@ a.LoginButton.btn.btn-primary:hover, button.LoginButton.btn.btn-primary:hover{
 .brand{
     font-family: 'Caveat', cursive;
     margin-left: 2vh;
+    cursor: pointer;
 }
 
 .modalFooter{
@@ -144,6 +145,7 @@ img{
 
 .navbar{
     border-bottom: 1px solid rgba(119, 136, 153, 0.1);
+    padding-inline: 5vh !important;
 }
 
 .post button{
@@ -169,6 +171,34 @@ img{
     padding: 1vh;
 }
 
+.ql-container.ql-snow {
+    border: 1px solid rgba(119, 136, 153, 0.1);
+    background: #fff;
+}
+
+.read-btn{
+    background: transparent;
+    text-decoration: underline;
+    border: none;
+    outline: none;
+}
+
+
+.blogpost{
+    padding: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.blogpost button{
+    float: left;
+}
+
+.blogspan{
+    text-align: left;
+    padding-block: 5vh;
+}
 
 @media only screen and (min-width: 200px) and (max-width: 767px)  {
    

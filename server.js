@@ -42,6 +42,22 @@ app.get("/", async(req,res) => {
     res.send(data)
 })
 
+app.post("/getblog", async(req,res) => {
+    const id = req.body.id
+    const data = await PostSchema.findOne({_id: id})
+    try{
+        if(data){
+            res.send(data)
+        }else{
+            res.send("no post found")
+        }
+    }
+    catch(err){
+        res.send(err)
+    }
+    
+})
+
 app.post("/post", async(req,res) => {
     const t = req.body.title
     const s = req.body.subtitle
@@ -50,12 +66,12 @@ app.post("/post", async(req,res) => {
     const ap = req.body.authorProfile
     const d = req.body.PostedDate
     const cp = req.body.coverPic
-    const post = new PostSchema({authorName: an, date: d, title:t, body:b, subtitle:s, authorProfile: ap, coverPic: 'https://unsplash.com/photos/assorted-color-hot-air-balloons-during-daytime-DuBNA1QMpPA'})
+    const post = new PostSchema({authorName: an, date: d, title:t, body:b, subtitle:s, authorProfile: ap, coverPic: cp})
     try{
         await post.save();
         if(post.save()){
             res.send({Posted: true})
-        }
+        }cp
     }catch(err){
         res.send(err)
     }

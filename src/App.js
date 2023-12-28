@@ -8,6 +8,7 @@ import Footer from './Components/Footer';
 import Home from './Components/Users/Home';
 import Contact from './Components/contact/Contact';
 import PageNotFound from './Components/PageNotFound';
+import BlogPost from './Components/BlogPost/BlogPost';
 
 
 function App() {
@@ -15,21 +16,20 @@ function App() {
     <div className="app">
       <NavigationBar />
       <div className="content-wrap">
-      <BrowserRouter>
+        <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Home />}/>
-            <Route path='/AdminLogin' element={<AdminLogin />}/>
-            {localStorage.getItem('LoggedIn') ? 
-            <Route path='/AdminHome' element={<AdminHome />}/> : 
-            <Route path='/AdminHome' element={<PageNotFound />}/>}
-            <Route path='/Contact' element={<Contact />}/>
+            <Route path='/' element={<Home />} />
+            <Route path='/AdminLogin' element={<AdminLogin />} />
+            <Route path='/AdminHome' element={<AdminHome />} />
+            <Route path='/blogpost' element={<BlogPost />} />
+            <Route path='/Contact' element={<Contact />} />
           </Routes>
         </BrowserRouter>
-        </div>
+      </div>
 
-        <Footer />
+      <Footer />
 
-        
+
     </div>
   );
 }

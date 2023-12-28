@@ -23,6 +23,9 @@
     border-radius: 2vh;
     transition: all 0.5s;
     height: 30vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .post-cards-header{
@@ -31,7 +34,10 @@
 
 .post-cards:hover > .post-cards-body{
     color: black;
-    background: rgba(176, 224, 230);
+    background: url('../../Assets/img/cardbg.webp') rgba(176, 224, 230);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 50vh;
 }
 

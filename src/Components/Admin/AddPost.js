@@ -1,42 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from "react-toastify";
-import RichTextEditor from "react-rte";
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import axios from "axios";
 
 export default function AddPost(props) {
   const [values, setValues] = useState([])
-  const [value, setValue] = useState(RichTextEditor.createEmptyValue())
-
-  const toolbarConfig = {
-    display: [
-      "INLINE_STYLE_BUTTONS",
-      "MONOSPACE_BUTTON",
-      "BLOCK_TYPE_BUTTONS",
-    ],
-    INLINE_STYLE_BUTTONS: [
-      { label: "Bold", style: "BOLD", className: "custom-css-class" },
-      { label: "Italic", style: "ITALIC" },
-      { label: "Underline", style: "UNDERLINE" },
-      { label: "Code", style: "CODE" }
-    ],
-
-
-    BLOCK_TYPE_BUTTONS: [
-      { label: "UL", style: "unordered-list-item" },
-      { label: "OL", style: "ordered-list-item" },
-    ]
-  };
+  const [value, setValue] = useState('')
 
   const onValueChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value })
   }
-
-  const onChange = (value) => {
-    setValue(value);
-    if (props.onChange) {
-      props.onChange(value.toString('html'));
-    }
-  };
 
   var mydate = new Date();
   var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -45,7 +19,7 @@ export default function AddPost(props) {
 
   const onSubmit = () => {
     axios({
-      url: "https://memoir-tau.vercel.app/post",
+      url: "https://memoir-server.onrender.com/post",
       method: "post",
       data: {
         title: values.title,
@@ -65,11 +39,7 @@ export default function AddPost(props) {
         toast.error("Post failed")
       }
     })
-    console.log(values)
   }
-
-
-
 
   return (
     <div className="add-post">
@@ -99,12 +69,7 @@ export default function AddPost(props) {
       </div>
 
       <div className="richtexteditor">
-        <RichTextEditor
-          toolbarConfig={toolbarConfig}
-          onChange={onChange}
-          placeholder="Body"
-          value={value}
-        />
+        <ReactQuill theme='snow' value={value} onChange={setValue} placeholder={'Enter Body'}/>
       </div>
 
       <div className="submit post">
